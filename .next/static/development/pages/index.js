@@ -223,51 +223,112 @@ function (_React$Component) {
       currency: 'USD'
     });
 
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "cryptoLoop", function () {
+      var table = [];
+      var n = _this.props.cmc.data.length;
+
+      for (var i = 0; i <= n - 1; i++) {
+        table.push(__jsx("div", {
+          className: "cryptocmc",
+          key: _this.props.cmc.data[i].id,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15
+          },
+          __self: this
+        }, __jsx("ul", {
+          className: "list-group",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16
+          },
+          __self: this
+        }, __jsx("li", {
+          className: "list-group-item",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17
+          },
+          __self: this
+        }, " Price for ", _this.props.cmc.data[i].name, " : ", __jsx("span", {
+          className: "badge badge-primary",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18
+          },
+          __self: this
+        }, " USD "), __jsx("strong", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19
+          },
+          __self: this
+        }, "    ", _this.props.cmc.data[i].quote.USD.price, " "), __jsx("span", {
+          className: "badge badge-success",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21
+          },
+          __self: this
+        }, " VOLUME 24H:  "), __jsx("strong", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          },
+          __self: this
+        }, "    ", _this.props.cmc.data[i].quote.USD.volume_24h, " ")))));
+      }
+
+      return table;
+    });
+
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Prices, [{
     key: "render",
+    //render the component 
     value: function render() {
       var _this2 = this;
 
+      console.log('totale iki:' + this.props.cmc.data.length);
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 41
         },
         __self: this
       }, __jsx("ul", {
         className: "list-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 42
         },
         __self: this
       }, __jsx("li", {
         className: "list-group-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 43
         },
         __self: this
       }, "Bitcoin rate for  ", this.props.bpi[this.state.currency].description, " : ", __jsx("span", {
         className: "badge badge-primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14
+          lineNumber: 44
         },
         __self: this
       }, "  ", this.props.bpi[this.state.currency].code, "  "), __jsx("strong", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 45
         },
         __self: this
       }, "   ", this.props.bpi[this.state.currency].rate, "  "))), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 48
         },
         __self: this
       }), __jsx("select", {
@@ -279,77 +340,49 @@ function (_React$Component) {
         className: "form-control",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 49
         },
         __self: this
       }, __jsx("option", {
         value: "USD",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 50
         },
         __self: this
       }, "USD"), __jsx("option", {
         value: "GBP",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 51
         },
         __self: this
       }, "GBP"), __jsx("option", {
         value: "EUR",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 52
         },
         __self: this
       }, "EUR")), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 55
         },
         __self: this
       }), __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 57
         },
         __self: this
       }, "Also Check current Another cryptocurrencies Price: "), __jsx("div", {
-        className: "cryptocmc",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 60
         },
         __self: this
-      }, __jsx("ul", {
-        className: "list-group",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }, __jsx("li", {
-        className: "list-group-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: this
-      }, " price for ", this.props.cmc.data[0].name, " : ", __jsx("span", {
-        className: "badge badge-primary",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }, " USD "), __jsx("strong", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 33
-        },
-        __self: this
-      }, "    ", this.props.cmc.data[0].quote.USD.price, " ")))));
+      }, this.cryptoLoop()));
     }
   }]);
 
@@ -9709,7 +9742,7 @@ App.getInitialProps = function _callee() {
         case 5:
           data = _context.sent;
           apiKey = 'f2b2d0f3-dc44-4a31-86b2-f851da69ac54';
-          url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", qString = "?CMC_PRO_API_KEY=" + apiKey + "&sort=market_cap&start=1&limit=10&cryptocurrency_type=tokens&convert=USD";
+          url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", qString = "?CMC_PRO_API_KEY=" + apiKey + "&sort=market_cap&start=1&cryptocurrency_type=tokens";
           _context.next = 10;
           return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch(url + qString, {
             mode: "no-cors"
@@ -9722,7 +9755,7 @@ App.getInitialProps = function _callee() {
 
         case 13:
           data2 = _context.sent;
-          console.log(data2.data);
+          console.log(data2.data[0]);
           return _context.abrupt("return", {
             bpi: data.bpi,
             cmc: data2
@@ -9740,7 +9773,7 @@ App.getInitialProps = function _callee() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!**********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fnurrizkyimani%2Fprogramming-all%2Fbitcoin_fetch%2Fpages%2Findex.js ***!
   \**********************************************************************************************************************************************/
@@ -9763,5 +9796,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

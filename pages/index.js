@@ -30,18 +30,19 @@ App.getInitialProps = async function (){
 
     const apiKey = 'f2b2d0f3-dc44-4a31-86b2-f851da69ac54'
     let url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", 
-    qString = "?CMC_PRO_API_KEY=" + apiKey + "&sort=market_cap&start=1&limit=10&cryptocurrency_type=tokens&convert=USD"
+    qString = "?CMC_PRO_API_KEY=" + apiKey + "&sort=market_cap&start=1&cryptocurrency_type=tokens"
 
     const res2 = await fetch(url + qString, { mode: "no-cors" })
     const data2 = await res2.json()
 
-    console.log(data2.data)
+    console.log(data2.data[0])
+
     
     
 
 
     return  {
-        bpi:  data.bpi,
+        bpi: data.bpi,
         cmc: data2
 
 

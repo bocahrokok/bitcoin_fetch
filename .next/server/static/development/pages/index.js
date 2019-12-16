@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -285,46 +285,107 @@ class Prices extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "state", {
       currency: 'USD'
     });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "cryptoLoop", () => {
+      let table = [];
+      let n = this.props.cmc.data.length;
+
+      for (let i = 0; i <= n - 1; i++) {
+        table.push(__jsx("div", {
+          className: "cryptocmc",
+          key: this.props.cmc.data[i].id,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15
+          },
+          __self: this
+        }, __jsx("ul", {
+          className: "list-group",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 16
+          },
+          __self: this
+        }, __jsx("li", {
+          className: "list-group-item",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17
+          },
+          __self: this
+        }, " Price for ", this.props.cmc.data[i].name, " : ", __jsx("span", {
+          className: "badge badge-primary",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18
+          },
+          __self: this
+        }, " USD "), __jsx("strong", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19
+          },
+          __self: this
+        }, "    ", this.props.cmc.data[i].quote.USD.price, " "), __jsx("span", {
+          className: "badge badge-success",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21
+          },
+          __self: this
+        }, " VOLUME 24H:  "), __jsx("strong", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          },
+          __self: this
+        }, "    ", this.props.cmc.data[i].quote.USD.volume_24h, " ")))));
+      }
+
+      return table;
+    });
   }
 
+  //render the component 
   render() {
+    console.log('totale iki:' + this.props.cmc.data.length);
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11
+        lineNumber: 41
       },
       __self: this
     }, __jsx("ul", {
       className: "list-group",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 42
       },
       __self: this
     }, __jsx("li", {
       className: "list-group-item",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 43
       },
       __self: this
     }, "Bitcoin rate for  ", this.props.bpi[this.state.currency].description, " : ", __jsx("span", {
       className: "badge badge-primary",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
+        lineNumber: 44
       },
       __self: this
     }, "  ", this.props.bpi[this.state.currency].code, "  "), __jsx("strong", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 45
       },
       __self: this
     }, "   ", this.props.bpi[this.state.currency].rate, "  "))), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 48
       },
       __self: this
     }), __jsx("select", {
@@ -334,77 +395,49 @@ class Prices extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       className: "form-control",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 49
       },
       __self: this
     }, __jsx("option", {
       value: "USD",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 50
       },
       __self: this
     }, "USD"), __jsx("option", {
       value: "GBP",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 51
       },
       __self: this
     }, "GBP"), __jsx("option", {
       value: "EUR",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 52
       },
       __self: this
     }, "EUR")), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 55
       },
       __self: this
     }), __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 57
       },
       __self: this
     }, "Also Check current Another cryptocurrencies Price: "), __jsx("div", {
-      className: "cryptocmc",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 60
       },
       __self: this
-    }, __jsx("ul", {
-      className: "list-group",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 30
-      },
-      __self: this
-    }, __jsx("li", {
-      className: "list-group-item",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 31
-      },
-      __self: this
-    }, " price for ", this.props.cmc.data[0].name, " : ", __jsx("span", {
-      className: "badge badge-primary",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 32
-      },
-      __self: this
-    }, " USD "), __jsx("strong", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 33
-      },
-      __self: this
-    }, "    ", this.props.cmc.data[0].quote.USD.price, " ")))));
+    }, this.cryptoLoop()));
   }
 
 }
@@ -2314,12 +2347,12 @@ App.getInitialProps = async function () {
   const data = await res.json();
   const apiKey = 'f2b2d0f3-dc44-4a31-86b2-f851da69ac54';
   let url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",
-      qString = "?CMC_PRO_API_KEY=" + apiKey + "&sort=market_cap&start=1&limit=10&cryptocurrency_type=tokens&convert=USD";
+      qString = "?CMC_PRO_API_KEY=" + apiKey + "&sort=market_cap&start=1&cryptocurrency_type=tokens";
   const res2 = await fetch(url + qString, {
     mode: "no-cors"
   });
   const data2 = await res2.json();
-  console.log(data2.data);
+  console.log(data2.data[0]);
   return {
     bpi: data.bpi,
     cmc: data2
@@ -2330,7 +2363,7 @@ App.getInitialProps = async function () {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
