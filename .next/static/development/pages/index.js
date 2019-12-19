@@ -237,46 +237,80 @@ function (_React$Component) {
           },
           __self: this
         }, __jsx("ul", {
-          className: "list-group",
+          className: "list-group ",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 16
           },
           __self: this
         }, __jsx("li", {
-          className: "list-group-item",
+          className: "list-group-item ",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 17
           },
           __self: this
-        }, " Price for ", _this.props.cmc.data[i].name, " : ", __jsx("span", {
-          className: "badge badge-primary",
+        }, __jsx("div", {
+          className: "row",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 18
           },
           __self: this
-        }, " USD "), __jsx("strong", {
+        }, __jsx("div", {
+          className: "semicolon",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 19
           },
           __self: this
-        }, "    ", _this.props.cmc.data[i].quote.USD.price, " "), __jsx("span", {
-          className: "badge badge-success",
+        }, " ", __jsx("h3", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19
+          },
+          __self: this
+        }, " : ")), "Price for ", _this.props.cmc.data[i].name, "   ", __jsx("div", {
+          className: "cmcprice",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 21
           },
           __self: this
+        }, __jsx("span", {
+          className: "badge badge-primary",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23
+          },
+          __self: this
+        }, " USD "), __jsx("strong", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          },
+          __self: this
+        }, "    ", _this.props.cmc.data[i].quote.USD.price, " ")), __jsx("div", {
+          className: "cmc24h",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28
+          },
+          __self: this
+        }, __jsx("span", {
+          className: "badge badge-success ",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29
+          },
+          __self: this
         }, " VOLUME 24H:  "), __jsx("strong", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 22
+            lineNumber: 30
           },
           __self: this
-        }, "    ", _this.props.cmc.data[i].quote.USD.volume_24h, " ")))));
+        }, "    ", _this.props.cmc.data[i].quote.USD.volume_24h, " ")))))));
       }
 
       return table;
@@ -295,40 +329,40 @@ function (_React$Component) {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 53
         },
         __self: this
       }, __jsx("ul", {
         className: "list-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 54
         },
         __self: this
       }, __jsx("li", {
         className: "list-group-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 55
         },
         __self: this
       }, "Bitcoin rate for  ", this.props.bpi[this.state.currency].description, " : ", __jsx("span", {
         className: "badge badge-primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 56
         },
         __self: this
       }, "  ", this.props.bpi[this.state.currency].code, "  "), __jsx("strong", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 57
         },
         __self: this
       }, "   ", this.props.bpi[this.state.currency].rate, "  "))), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 60
         },
         __self: this
       }), __jsx("select", {
@@ -340,46 +374,46 @@ function (_React$Component) {
         className: "form-control",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 61
         },
         __self: this
       }, __jsx("option", {
         value: "USD",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 62
         },
         __self: this
       }, "USD"), __jsx("option", {
         value: "GBP",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 63
         },
         __self: this
       }, "GBP"), __jsx("option", {
         value: "EUR",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 64
         },
         __self: this
       }, "EUR")), __jsx("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 67
         },
         __self: this
       }), __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 69
         },
         __self: this
       }, "Also Check current Another cryptocurrencies Price: "), __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 72
         },
         __self: this
       }, this.cryptoLoop()));
@@ -9674,9 +9708,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/next/dist/build/polyfills/fetch/index.js");
 /* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_Prices__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Prices */ "./components/Prices.js");
+/* harmony import */ var _components_PriceStyle_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/PriceStyle.css */ "./components/PriceStyle.css");
+/* harmony import */ var _components_PriceStyle_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_PriceStyle_css__WEBPACK_IMPORTED_MODULE_5__);
 
 var _jsxFileName = "/Users/nurrizkyimani/programming-all/bitcoin_fetch/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -9693,25 +9730,25 @@ function App(props) {
   return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 15
     },
     __self: this
   }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     },
     __self: this
   }, __jsx("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 17
     },
     __self: this
   }, " Welcome to Bitzprice"), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 18
     },
     __self: this
   }, "Check current Bitcoin Repo Rate: "), __jsx(_components_Prices__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -9719,7 +9756,7 @@ function App(props) {
     cmc: props.cmc,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: this
   })));
@@ -9796,5 +9833,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

@@ -13,13 +13,25 @@ class Prices extends React.Component {
       for(let i = 0; i <= n-1; i++) {
           table.push(
              <div className="cryptocmc" key= {this.props.cmc.data[i].id}>
-                <ul className="list-group">
-                    <li className="list-group-item"> Price for {this.props.cmc.data[i].name} : {  }
-                        <span className="badge badge-primary"> USD </span>
-                        <strong>    {this.props.cmc.data[i].quote.USD.price} </strong>
+                <ul className="list-group ">
+                    <li className="list-group-item "> 
+                        <div className="row">
+                          <div className="semicolon" > <h3> : </h3></div>
+                        Price for {this.props.cmc.data[i].name}   {  }
+                          <div className="cmcprice">
+                            
+                              <span className="badge badge-primary"> USD </span>
+                              <strong>    {this.props.cmc.data[i].quote.USD.price} </strong>
+                          </div>
+                        
 
-                        <span className="badge badge-success"> VOLUME 24H:  </span>
-                        <strong>    {this.props.cmc.data[i].quote.USD.volume_24h} </strong>
+                          <div className="cmc24h">
+                            <span className="badge badge-success "> VOLUME 24H:  </span>
+                            <strong>    {this.props.cmc.data[i].quote.USD.volume_24h} </strong>
+                          </div>
+
+                        </div>
+                        
 
                     </li>
                 </ul>
@@ -62,6 +74,7 @@ class Prices extends React.Component {
           </div>
 
         
+          
           
         </div>
         

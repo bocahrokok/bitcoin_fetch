@@ -1,0 +1,32 @@
+.cmc24h {
+    margin-left: auto;
+
+}
+
+.row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+
+}
+
+.cmcprice{
+    position: absolute;
+    left: 37%;
+    justify-content: center;
+     text-align: center;
+
+}
+
+.semicolon {
+    position: absolute;
+    left: 25%;
+    
+}
+
+h3 {
+    color: blueviolet;
+}
+
+/*# sourceMappingURL=styles.chunk.css.map*/

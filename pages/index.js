@@ -3,6 +3,7 @@ import React, { useState} from 'react';
 import Layout from '../components/Layout';
 import Fetch from 'isomorphic-unfetch';
 import Price from '../components/Prices';
+import '../components/PriceStyle.css';
 // const rp = require('request-promise');
 // import rp from 'request-promise'
 
